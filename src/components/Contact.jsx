@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export default function Contact() {
   // Animation variants
@@ -28,20 +29,33 @@ export default function Contact() {
     {
       icon: <EnvelopeIcon className="w-6 h-6" />,
       title: "Email",
-      value: "your.email@example.com",
+      value: "nipunajanaranjana7@gmail.com",
       link: "mailto:your.email@example.com"
     },
     {
       icon: <PhoneIcon className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (234) 567-8900",
-      link: "tel:+12345678900"
+      value: "(+94) 743790268",
+      link: "tel:+94743790268"
     },
     {
       icon: <MapPinIcon className="w-6 h-6" />,
       title: "Location",
-      value: "New York, USA",
+      value: "Mihinthale, Sri lanka",
       link: "#"
+    }
+  ];
+
+  const socialLinks = [
+    {
+      platform: 'GitHub',
+      url: 'https://github.com/Nipunajanaranjanapemarathna',
+      icon: <FaGithub className="w-6 h-6" />
+    },
+    {
+      platform: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/nipuna-janaranjana-936960285/',
+      icon: <FaLinkedin className="w-6 h-6" />
     }
   ];
 
@@ -165,10 +179,12 @@ export default function Contact() {
                 variants={itemVariants}
                 className="flex gap-4 mt-8"
               >
-                {['GitHub', 'LinkedIn', 'Twitter'].map((platform) => (
+                {socialLinks.map((social) => (
                   <motion.a
-                    key={platform}
-                    href="#"
+                    key={social.platform}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 bg-darkBg rounded-lg text-dark-text/70 hover:text-accent transition-colors"
                     whileHover={{ 
                       scale: 1.1,
@@ -176,7 +192,7 @@ export default function Contact() {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    {platform}
+                    {social.icon}
                   </motion.a>
                 ))}
               </motion.div>

@@ -71,7 +71,7 @@ export default function About() {
               >
                 {/* Your actual image */}
                 <img 
-                  src="/images/2.png"
+                  src="\images\about2.jpg"
                   alt="Nipuna Janaranjana"
                   className="w-full h-full object-cover"
                 />
@@ -144,11 +144,11 @@ export default function About() {
               >
                 <TypeAnimation
                   sequence={[
-                    'AI Enthusiast',
+                    'AI/ML  Enthusiast',
                     2000,
-                    'ML Developer',
+                    'Cloud Computing Enthusiast',
                     2000,
-                    'Computer Vision Specialist',
+                    'Undergraduate Student',
                     2000,
                   ]}
                   wrapper="span"
@@ -181,9 +181,11 @@ export default function About() {
               >
                 {/* Areas of Focus */}
                 {[
+                  { label: 'Machine Learning', value: 'Intermediate' },
                   { label: 'Generative AI', value: 'Intermediate' },
                   { label: 'Computer Vision', value: 'Intermediate' },
-                  { label: 'Machine Learning', value: 'Intermediate' }
+                  { label: 'Image Processing', value: 'Intermediate' },
+                  { label: 'Agentic AI', value: 'Intermediate' },
                 ].map((focus, index) => (
                   <motion.div 
                     key={focus.label}

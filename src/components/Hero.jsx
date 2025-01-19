@@ -70,7 +70,7 @@ export default function Hero() {
                   transition={{ duration: 0.3 }}
                 >
                   <img
-                    src="/images/1.png"
+                    src="\images\hero (1).jpg"
                     alt="Nipuna Janaranjana"
                     className="w-full h-full object-cover"
                   />
@@ -93,7 +93,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="text-xl md:text-2xl text-dark-text-muted max-w-2xl mx-auto leading-relaxed"
             >
-              AI/ML Enthusiast | Exploring Generative AI, Agentic AI, and Computer Vision
+              AI/ML Enthusiast | Exploring Generative AI, Agentic AI, and Computer Vision | Undergraduate Student
             </motion.p>
             
             <motion.div

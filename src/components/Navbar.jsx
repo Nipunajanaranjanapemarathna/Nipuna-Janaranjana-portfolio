@@ -20,8 +20,8 @@ export default function Navbar() {
     { title: 'Home', href: '#home' },
     { title: 'About', href: '#about' },
     { title: 'Skills', href: '#skills' },
-    { title: 'Projects', href: '#projects' },
     { title: 'Education', href: '#education' },
+    { title: 'Projects', href: '#projects' },
     { title: 'Contact', href: '#contact' },
   ];
 
@@ -39,15 +39,18 @@ export default function Navbar() {
           {/* Logo */}
           <motion.a
             href="#home"
-            className="flex items-center"
+            className="flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img
-              src="/images/1.png"
-              alt="nJ Logo"
-              className="h-8 w-auto"
-            />
+            <div className="flex items-center">
+              <img
+                src="/images/hero (1).jpg"
+                alt="nJ Logo"
+                className="h-8 w-8 rounded-full object-cover border-2 border-accent/20"
+              />
+              <span className="text-xl font-bold text-accent ml-2">Nipuna</span>
+            </div>
           </motion.a>
 
           {/* Desktop Navigation Links */}
@@ -125,7 +128,7 @@ export default function Navbar() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="fixed inset-0 bg-darker/40 backdrop-blur-sm md:hidden"
+                  className="fixed inset-0 bg-darker/40 backdrop-blur-md md:hidden"
                   onClick={() => setIsMobileMenuOpen(false)}
                   style={{ zIndex: 40 }}
                 />
@@ -139,7 +142,7 @@ export default function Navbar() {
                   className="absolute top-full left-0 right-0 md:hidden"
                   style={{ zIndex: 50 }}
                 >
-                  <div className="bg-darker/95 backdrop-blur-xl shadow-xl border-t border-accent/10">
+                  <div className="bg-[#0F172A]/95 backdrop-blur-xl shadow-xl border-t border-accent/10">
                     <div className="container mx-auto px-4 py-4">
                       <div className="flex flex-col space-y-4">
                         {navLinks.map((link, index) => (
@@ -157,7 +160,7 @@ export default function Navbar() {
                         ))}
                         {/* Mobile CV Download Button */}
                         <motion.a
-                          href="/path-to-your-cv.pdf"
+                          href="/cv/Nipuna_cv.pdf"
                           download="Nipuna-Janaranjana-CV.pdf"
                           className="flex items-center gap-2 px-4 py-2 bg-accent text-darker rounded-full hover:bg-accent/90 transition-colors w-full justify-center"
                           initial={{ opacity: 0, x: -20 }}
