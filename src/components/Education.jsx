@@ -47,9 +47,25 @@ export default function Education() {
               <div className="w-2 h-2 rounded-full bg-accent absolute top-1 left-1"></div>
             </div>
             <div className="bg-darkBg p-6 rounded-lg shadow-lg">
-              <h4 className="text-xl font-semibold text-accent mb-2">Bachelor of Information and Communication Technology (Hons)</h4>
-              <p className="text-dark-text/60 mb-2">Faculty of Technology, University of Sri Jayewardenepura</p>
-              <p className="text-dark-text/60">2022 - Present</p>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-full border-2 border-accent/20 overflow-hidden p-0.5">
+                    <motion.img
+                      src="\images\japura-logo.png"
+                      alt="University of Sri Jayewardenepura Logo"
+                      className="w-full h-full rounded-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                    <div className="absolute inset-0 rounded-full border-2 border-accent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-accent mb-2">Bachelor of Information and Communication Technology (Hons)</h4>
+                  <p className="text-dark-text/60 mb-2">Faculty of Technology, University of Sri Jayewardenepura</p>
+                  <p className="text-dark-text/60">2022 - Present</p>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -65,10 +81,26 @@ export default function Education() {
               <div className="w-2 h-2 rounded-full bg-accent absolute top-1 left-1"></div>
             </div>
             <div className="bg-darkBg p-6 rounded-lg shadow-lg">
-              <h4 className="text-xl font-semibold text-accent mb-2">G.C.E. Advanced Level in Technology</h4>
-              <p className="text-dark-text/60 mb-2">A/Mihinthale M/V</p>
-              <p className="text-dark-text/60 mb-2">Engineering Technology</p>
-              <p className="text-dark-text/60 font-medium">District Rank - 20</p>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-full border-2 border-accent/20 overflow-hidden p-0.5">
+                    <motion.img
+                      src="\images\shool-logo.png"
+                      alt="Mihinthale M/V Logo"
+                      className="w-full h-full rounded-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                    <div className="absolute inset-0 rounded-full border-2 border-accent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-accent mb-2">G.C.E. Advanced Level in Technology</h4>
+                  <p className="text-dark-text/60 mb-2">A/Mihinthale M/V</p>
+                  <p className="text-dark-text/60 mb-2">Engineering Technology</p>
+                  <p className="text-dark-text/60 font-medium">District Rank - 20</p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -96,9 +128,25 @@ export default function Education() {
               <div className="w-2 h-2 rounded-full bg-accent absolute top-1 left-1"></div>
             </div>
             <div className="bg-darkBg p-6 rounded-lg shadow-lg">
-              <h4 className="text-xl font-semibold text-accent mb-2">AWS Cloud Practitioner Essentials Certificate</h4>
-              <p className="text-dark-text/60 mb-2">Amazon Web Services (AWS)</p>
-              <p className="text-dark-text/60">2024</p>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-full border-2 border-accent/20 overflow-hidden p-0.5">
+                    <motion.img
+                      src="\images\aws-logo.jpg"
+                      alt="AWS Logo"
+                      className="w-full h-full rounded-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                    <div className="absolute inset-0 rounded-full border-2 border-accent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-accent mb-2">AWS Cloud Practitioner Essentials Certificate</h4>
+                  <p className="text-dark-text/60 mb-2">Amazon Web Services (AWS)</p>
+                  <p className="text-dark-text/60">2024</p>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -114,9 +162,25 @@ export default function Education() {
               <div className="w-2 h-2 rounded-full bg-accent absolute top-1 left-1"></div>
             </div>
             <div className="bg-darkBg p-6 rounded-lg shadow-lg">
-              <h4 className="text-xl font-semibold text-accent mb-2">AI/ML Engineer - Stage II</h4>
-              <p className="text-dark-text/60 mb-2">Sri Lanka Institute of Information Technology (SLIIT)</p>
-              <p className="text-dark-text/60">2024</p>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-full border-2 border-accent/20 overflow-hidden p-0.5">
+                    <motion.img
+                      src="\images\images.png"
+                      alt="SLIIT Logo"
+                      className="w-full h-full rounded-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                    <div className="absolute inset-0 rounded-full border-2 border-accent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-accent mb-2">AI/ML Engineer - Stage II</h4>
+                  <p className="text-dark-text/60 mb-2">Sri Lanka Institute of Information Technology (SLIIT)</p>
+                  <p className="text-dark-text/60">2024</p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

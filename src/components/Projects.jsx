@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CodeBracketIcon, CommandLineIcon } from '@heroicons/react/24/outline';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Projects() {
   const projects = [
@@ -12,7 +13,8 @@ export default function Projects() {
         "Streamlined gap detection for academic research"
       ],
       supervisor: "Dr. D. L. Chamara Pramod Liyanage",
-      image: "/images/research-gap2.jpg"
+      image: "/images/research-gap2.jpg",
+      github: "https://github.com/Nipunajanaranjanapemarathna/research-gaps-identifier"
     },
     {
       title: "Potato Leaf Disease Classification",
@@ -22,7 +24,8 @@ export default function Projects() {
         "Built FastAPI backend for CNN-based potato leaf disease classification",
         "Enabled real-time image classification with TensorFlow and /docs API"
       ],
-      image: "/images/potato.jpg"
+      image: "/images/potato.jpg",
+      github: "https://github.com/Nipunajanaranjanapemarathna/CNN_Deploy_FastApi"
     },
     {
       title: "CalmMind AI",
@@ -33,7 +36,8 @@ export default function Projects() {
         "Utilized RAG for personalized, AI-driven support"
       ],
       status: "Ongoing",
-      image: "/images/calm_mind.jpeg"
+      image: "/images/calm_mind.jpeg",
+      github: "https://github.com/NipunaJayathilaka/calm-mind-ai"
     },
     {
       title: "Abnormal Behavior Detection",
@@ -45,7 +49,8 @@ export default function Projects() {
         "TensorFlow for model training"
       ],
       status: "Ongoing",
-      image: "/images/abnormal.jpg"
+      image: "/images/abnormal.jpg",
+      github: "https://github.com/NipunaJayathilaka/abnormal-behavior-detection"
     },
     {
       title: "Mental Health Support LLM",
@@ -55,7 +60,8 @@ export default function Projects() {
         "Fine-Tuned LLM with LoRA for mental health support",
         "Used Medical Q&A Data from doctors and consultants."
       ],
-      image: "/images/menal_llm.jpg"
+      image: "/images/menal_llm.jpg",
+      github: "https://github.com/NipunaJayathilaka/mental-health-support-llm"
     },
     {
       title: "Multi AI Agent System",
@@ -65,7 +71,8 @@ export default function Projects() {
         "Developed web search, finance, and team leader agents",
         "LLM for LLAMA"
       ],
-      image: "/images/multiagentic.jpg"
+      image: "/images/multiagentic.jpg",
+      github: "https://github.com/Nipunajanaranjanapemarathna/agentic_AI"
     }
   ];
 
@@ -160,6 +167,20 @@ export default function Projects() {
                     <li key={pointIndex}>{point}</li>
                   ))}
                 </ul>
+
+                <div className="mt-4 flex justify-end">
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaGithub className="w-5 h-5" />
+                    <span className="text-sm">View Code</span>
+                  </motion.a>
+                </div>
               </div>
             </motion.div>
           ))}

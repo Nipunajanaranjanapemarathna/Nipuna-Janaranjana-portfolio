@@ -58,22 +58,23 @@ export default function About() {
             className="grid md:grid-cols-2 gap-12 items-center"
           >
             {/* Image */}
-            <motion.div
-              className="relative w-full max-w-md mx-auto"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
+            <motion.div className="relative group">
+              {/* Glowing border container */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-accent via-accent-light to-accent rounded-full opacity-75 group-hover:opacity-100 blur transition duration-300"></div>
+              
+              {/* Image container */}
               <motion.div
-                className="aspect-square rounded-full bg-gradient-to-br from-accent/20 to-accent/10 overflow-hidden relative"
-                initial={{ filter: 'grayscale(100%)' }}
-                whileHover={{ filter: 'grayscale(0%)' }}
+                className="relative aspect-square rounded-full bg-gradient-to-br from-accent/20 to-accent/10 overflow-hidden border-2 border-accent/50"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
+                whileHover={{ scale: 1.02 }}
               >
                 {/* Your actual image */}
                 <img 
-                  src="\images\about2.jpg"
+                  src="/images/about2.jpg"
                   alt="Nipuna Janaranjana"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-full"
                 />
 
                 {/* Keeping the overlay effect */}
@@ -184,7 +185,6 @@ export default function About() {
                   { label: 'Machine Learning', value: 'Intermediate' },
                   { label: 'Generative AI', value: 'Intermediate' },
                   { label: 'Computer Vision', value: 'Intermediate' },
-                  { label: 'Image Processing', value: 'Intermediate' },
                   { label: 'Agentic AI', value: 'Intermediate' },
                 ].map((focus, index) => (
                   <motion.div 

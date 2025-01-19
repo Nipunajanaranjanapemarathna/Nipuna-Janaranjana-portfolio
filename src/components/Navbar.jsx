@@ -82,8 +82,8 @@ export default function Navbar() {
             
             {/* CV Download Button */}
             <motion.a
-              href="/path-to-your-cv.pdf"
-              download="Nipuna-Janaranjana-CV.pdf"
+              href="../public/cv/Nipuna_cv.pdf"
+              download="Nipuna_cv.pdf"
               className="flex items-center gap-2 px-4 py-2 bg-accent text-darker rounded-full hover:bg-accent/90 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -160,8 +160,8 @@ export default function Navbar() {
                         ))}
                         {/* Mobile CV Download Button */}
                         <motion.a
-                          href="/cv/Nipuna_cv.pdf"
-                          download="Nipuna-Janaranjana-CV.pdf"
+                          href="../public/cv/Nipuna_cv.pdf"
+                          download="Nipuna_cv.pdf"
                           className="flex items-center gap-2 px-4 py-2 bg-accent text-darker rounded-full hover:bg-accent/90 transition-colors w-full justify-center"
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
