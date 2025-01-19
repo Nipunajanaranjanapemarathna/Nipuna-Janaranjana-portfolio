@@ -12,7 +12,7 @@ export default function Projects() {
         "Streamlined gap detection for academic research"
       ],
       supervisor: "Dr. D. L. Chamara Pramod Liyanage",
-      image: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=1974&auto=format&fit=crop"
+      image: "/images/research-gap2.jpg"
     },
     {
       title: "Potato Leaf Disease Classification",
@@ -22,7 +22,7 @@ export default function Projects() {
         "Built FastAPI backend for CNN-based potato leaf disease classification",
         "Enabled real-time image classification with TensorFlow and /docs API"
       ],
-      image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=2070&auto=format&fit=crop"
+      image: "/images/potato.jpg"
     },
     {
       title: "CalmMind AI",
@@ -33,7 +33,7 @@ export default function Projects() {
         "Utilized RAG for personalized, AI-driven support"
       ],
       status: "Ongoing",
-      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=2080&auto=format&fit=crop"
+      image: "/images/calm_mind.jpeg"
     },
     {
       title: "Abnormal Behavior Detection",
@@ -45,16 +45,17 @@ export default function Projects() {
         "TensorFlow for model training"
       ],
       status: "Ongoing",
-      image: "https://images.unsplash.com/photo-1633555338815-b7f5a7b386f4?q=80&w=1932&auto=format&fit=crop"
+      image: "/images/abnormal.jpg"
     },
     {
       title: "Mental Health Support LLM",
       description: "Specialized LLM for mental health assistance",
       technologies: ["LLaMA", "LoRA"],
       points: [
-        "Fine-Tuned LLM with LoRA for mental health support"
+        "Fine-Tuned LLM with LoRA for mental health support",
+        "Used Medical Q&A Data from doctors and consultants."
       ],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+      image: "/images/menal_llm.jpg"
     },
     {
       title: "Multi AI Agent System",
@@ -62,10 +63,9 @@ export default function Projects() {
       technologies: ["Phidata", "LLaMA"],
       points: [
         "Developed web search, finance, and team leader agents",
-        "Used Medical Q&A Data from doctors and consultants",
         "LLM for LLAMA"
       ],
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop"
+      image: "/images/multiagentic.jpg"
     }
   ];
 

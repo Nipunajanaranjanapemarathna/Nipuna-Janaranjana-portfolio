@@ -1,8 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { ArrowDownTrayIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Handle scroll effect
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-darker/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-[#0F172A]/90 backdrop-blur-xl border-b border-accent/10' : 'bg-[#0F172A]/80 backdrop-blur-lg'
       }`}
     >
       <nav className="container mx-auto px-4">
@@ -37,14 +39,18 @@ export default function Navbar() {
           {/* Logo */}
           <motion.a
             href="#home"
-            className="text-2xl font-bold text-accent"
+            className="flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Your Logo
+            <img
+              src="/images/1.png"
+              alt="nJ Logo"
+              className="h-8 w-auto"
+            />
           </motion.a>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <motion.div 
             className="hidden md:flex items-center space-x-8"
             initial={{ opacity: 0 }}
@@ -56,11 +62,7 @@ export default function Navbar() {
                 key={link.title}
                 href={link.href}
                 className="text-dark-text/80 hover:text-accent relative group"
-                whileHover={{ 
-                  scale: 1.1,
-                  rotate: [0, -5, 5, -5, 0],
-                  transition: { duration: 0.3 }
-                }}
+                whileHover={{ scale: 1.1 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -74,31 +76,104 @@ export default function Navbar() {
                 />
               </motion.a>
             ))}
+            
+            {/* CV Download Button */}
+            <motion.a
+              href="/path-to-your-cv.pdf"
+              download="Nipuna-Janaranjana-CV.pdf"
+              className="flex items-center gap-2 px-4 py-2 bg-accent text-darker rounded-full hover:bg-accent/90 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ArrowDownTrayIcon className="w-4 h-4" />
+              <span className="font-medium">Download CV</span>
+            </motion.a>
           </motion.div>
 
           {/* Mobile Menu Button */}
           <motion.button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-dark-text/80 hover:text-accent"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+            {isMobileMenuOpen ? (
+              <XMarkIcon className="w-6 h-6" />
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
           </motion.button>
 
-          {/* Mobile Menu (You can add a slide-out menu here) */}
-          {/* Add your mobile menu implementation here */}
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <>
+                {/* Backdrop overlay */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 bg-darker/40 backdrop-blur-sm md:hidden"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ zIndex: 40 }}
+                />
+                
+                {/* Mobile menu content */}
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-0 right-0 md:hidden"
+                  style={{ zIndex: 50 }}
+                >
+                  <div className="bg-darker/95 backdrop-blur-xl shadow-xl border-t border-accent/10">
+                    <div className="container mx-auto px-4 py-4">
+                      <div className="flex flex-col space-y-4">
+                        {navLinks.map((link, index) => (
+                          <motion.a
+                            key={link.title}
+                            href={link.href}
+                            className="text-dark-text/80 hover:text-accent py-2 transition-colors duration-200"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.1 }}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {link.title}
+                          </motion.a>
+                        ))}
+                        {/* Mobile CV Download Button */}
+                        <motion.a
+                          href="/path-to-your-cv.pdf"
+                          download="Nipuna-Janaranjana-CV.pdf"
+                          className="flex items-center gap-2 px-4 py-2 bg-accent text-darker rounded-full hover:bg-accent/90 transition-colors w-full justify-center"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: navLinks.length * 0.1 }}
+                        >
+                          <ArrowDownTrayIcon className="w-4 h-4" />
+                          <span className="font-medium">Download CV</span>
+                        </motion.a>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
         </div>
       </nav>
 

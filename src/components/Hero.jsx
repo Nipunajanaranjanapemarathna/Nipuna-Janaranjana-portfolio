@@ -8,8 +8,31 @@ export default function Hero() {
       
       {/* Animated background shapes */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/20 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-accent-light/20 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <motion.div 
+          className="absolute top-20 left-10 w-72 h-72 bg-accent/20 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-10 w-72 h-72 bg-accent-light/20 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: 1
+          }}
+        />
       </div>
 
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
@@ -23,54 +46,87 @@ export default function Hero() {
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ 
+                duration: 0.5,
+                type: "spring",
+                stiffness: 100
+              }}
               className="mx-auto mb-8"
             >
               <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 animate-border-rotate"></div>
+                <motion.div 
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
                 <div className="absolute inset-[3px] rounded-full bg-darkBg"></div>
-                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-transparent">
+                <motion.div 
+                  className="relative w-full h-full rounded-full overflow-hidden border-4 border-transparent"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <img
-                    src="\images\1.png"
+                    src="/images/1.png"
                     alt="Nipuna Janaranjana"
                     className="w-full h-full object-cover"
                   />
-                </div>
+                </motion.div>
               </div>
             </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-dark-text mb-6 bg-clip-text text-transparent bg-gradient-to-r from-accent-light to-accent">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-5xl md:text-7xl font-bold text-dark-text mb-6 bg-clip-text text-transparent bg-gradient-to-r from-accent-light to-accent"
+            >
               Nipuna Janaranjana
-            </h1>
+            </motion.h1>
             
-            <p className="text-xl md:text-2xl text-dark-text-muted max-w-2xl mx-auto leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="text-xl md:text-2xl text-dark-text-muted max-w-2xl mx-auto leading-relaxed"
+            >
               AI/ML Enthusiast | Exploring Generative AI, Agentic AI, and Computer Vision
-            </p>
+            </motion.p>
             
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
               className="flex justify-center gap-4 mt-8"
             >
-              <a
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="#contact"
-                className="px-8 py-3 bg-accent text-white rounded-full font-medium hover:bg-accent-light transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-accent/50"
+                className="px-8 py-3 bg-accent text-white rounded-full font-medium hover:bg-accent-light transform transition-all duration-300 shadow-lg hover:shadow-accent/50"
               >
                 Get in Touch
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="#projects"
-                className="px-8 py-3 bg-secondary/50 text-dark-text rounded-full font-medium hover:bg-secondary transform hover:scale-105 transition-all duration-300"
+                className="px-8 py-3 bg-secondary/50 text-dark-text rounded-full font-medium hover:bg-secondary transform transition-all duration-300"
               >
                 View Projects
-              </a>
+              </motion.a>
             </motion.div>
 
             {/* Scroll indicator */}
             <motion.div
               initial={{ opacity: 0, y: 0 }}
-              animate={{ opacity: 1, y: 10 }}
+              animate={{ 
+                opacity: 1, 
+                y: [0, 10, 0] 
+              }}
               transition={{ 
                 duration: 1.5,
                 repeat: Infinity,
